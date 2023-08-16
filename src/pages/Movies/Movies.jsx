@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import MoviesList from './MoviesList';
-import SearchForm from './SearchForm';
-import { searchMoviesByKeyword, getTrendingMovies } from '../api'; // Import your API functions
+import MoviesList from '../../components/Movies/MoviesList';
+import SearchForm from '../../components/Movies/SearchForm';
+import { searchMoviesByKeyword, getTrendingMovies } from '../../components/api'; 
 
 const MoviesContainer = styled.div`
   margin: 20px;
@@ -18,7 +18,6 @@ const Movies = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
-    // Fetch trending movies on component mount
     getTrendingMovies().then((data) => {
       setTrendingMovies(data.results);
     });
@@ -38,6 +37,7 @@ const Movies = () => {
 };
 
 export default Movies;
+
 
 // import React, { useState } from 'react';
 // import styled from 'styled-components';

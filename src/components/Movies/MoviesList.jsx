@@ -36,6 +36,7 @@ const MoviesList = ({ searchQuery }) => {
 
 export default MoviesList;
 
+
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import { searchMovies } from '../api'; 

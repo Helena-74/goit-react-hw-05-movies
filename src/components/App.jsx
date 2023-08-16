@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Link, Router, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
-const Home = lazy(() => import('./Home/Home'));
-const Movies = lazy(() => import('./Movies/Movies'));
-const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
+const Home = lazy(() => import('../pages/Home/Home'));
+const Movies = lazy(() => import('../pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
@@ -28,15 +28,14 @@ const App = () => {
     <Router>
       <GlobalStyle />
       <AppContainer>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/movies" exact component={Movies} />
-            <Route path="/movies/:movieId" exact component={MovieDetails} />
-            <Route path="/movies/:movieId/cast" exact component={Cast} />
-            <Route path="/movies/:movieId/reviews" exact component={Reviews} />
-            <Redirect to="/" />
-          </Switch>
+        <Suspense fallback={<div>Loading...</div>} >
+          <Route index element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails />}>
+            <Route path="Reviews" element={<Reviews />} />
+            <Route path="cast" element={<Cast />} />
+          </Route>
+        <Route path="*" element={<Home />} />
         </Suspense>
       </AppContainer>
     </Router>
@@ -86,3 +85,18 @@ export default App;
 //     </div>
 //   );
 // };
+// {/* <Route path="/" element={<SharedLayout />}>
+//           <Route index element={<Home />} />
+//           <Route path="/movies" element={<Movies />} />
+//           <Route path="/movies/:movieId" element={<MovieDetails />}>
+//             <Route path="Reviews" element={<Reviews />} />
+//             <Route path="cast" element={<Cast />} />
+//           </Route>
+//         </Route>
+//         <Route path="*" element={<Home />} /> */}
+//                     {/* <Route path="/" exact component={Home} />
+//             <Route path="/movies" exact component={Movies} />
+//             <Route path="/movies/:movieId" exact component={MovieDetails} />
+//             <Route path="/movies/:movieId/cast" exact component={Cast} />
+//             <Route path="/movies/:movieId/reviews" exact component={Reviews} />
+//             <Redirect to="/" /> */}

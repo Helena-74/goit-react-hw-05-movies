@@ -59,6 +59,7 @@ const SearchForm = ({ onSubmit }) => {
 
 export default SearchForm;
 
+
 // import React, { useState } from 'react';
 // import styled from 'styled-components';
 

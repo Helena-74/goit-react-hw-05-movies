@@ -35,6 +35,7 @@ const Cast = ({ cast }) => {
 
 export default Cast;
 
+
 // import React from 'react';
 // import { useParams } from 'react-router-dom';
 

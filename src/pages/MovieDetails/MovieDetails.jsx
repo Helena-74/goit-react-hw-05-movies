@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useParams, useLocation, Link, Route, Switch, Redirect } from 'react-router-dom';
-import Cast from '../Cast/Cast';
-import Reviews from '../Reviews/Reviews';
-import { getMovieDetails, getMovieCredits, getMovieReviews } from '../api';
+import { useParams, useLocation, Link, Route} from 'react-router-dom';
+import Cast from '../../components/Cast/Cast';
+import Reviews from '../../components/Reviews/Reviews';
+import { getMovieDetails, getMovieCredits, getMovieReviews } from '../../components/api';
 
 const MovieDetailsContainer = styled.div`
   margin: 20px;
@@ -52,20 +52,19 @@ const MovieDetails = () => {
       <StyledLink to={backLink}>Back</StyledLink>
       <p>{movieData.overview}</p>
 
-      <Switch>
         <Route path="/movies/:movieId/cast">
           <Cast cast={cast} />
         </Route>
         <Route path="/movies/:movieId/reviews">
           <Reviews reviews={reviews} />
         </Route>
-        <Redirect to={backLink} />
-      </Switch>
+        <Route path="*" element={backLink} />
     </MovieDetailsContainer>
   );
 };
 
 export default MovieDetails;
+
 
 // import React, { useState, useEffect } from 'react';
 // import { useParams, useLocation, Link, Route, Switch, Redirect } from 'react-router-dom';

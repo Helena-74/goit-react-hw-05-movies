@@ -36,3 +36,4 @@ export async function searchMoviesByKeyword(keyword) {
   const data = await response.json();
   return data;
 }
+
