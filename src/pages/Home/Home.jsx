@@ -1,6 +1,6 @@
 import React from 'react';
 import MoviesList from '../../components/Movies/MoviesList';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -9,22 +9,22 @@ const StyledHeader = styled.h2`
   margin-bottom: 20px;
 `;
 
-// const StyledLink = styled(Link)`
-//   color: #007bff;
-//   text-decoration: none;
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// `;
+const StyledLink = styled(Link)`
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
-// const StyledUl = styled.ul`
-//   list-style: none;
-//   padding: 0;
-// `;
+const StyledUl = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
 
-// const StyledLi = styled.li`
-//   margin-bottom: 10px;
-// `;
+const StyledLi = styled.li`
+  margin-bottom: 10px;
+`;
 
 const HomeContainer = styled.div`
   margin: 20px;
