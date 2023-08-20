@@ -1,6 +1,7 @@
 import React from 'react';
 import MoviesList from '../../components/Movies/MoviesList';
 import Home from '../Home/Home.styled'
+
 import styled from 'styled-components';
 
 const Home = () => {

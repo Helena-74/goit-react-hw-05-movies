@@ -25,6 +25,7 @@ const MoviesList = ({ movies }) => {
 
   return (
     <StyledUl>
+      <MoviesList movies={movies}/>
       {movies.map((movie) => (
         <StyledLi key={movie.id}>
           <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
