@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { searchMovies } from '../api';
+// import { searchMovies } from '../api';
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -12,16 +12,16 @@ const StyledLi = styled.li`
   margin-bottom: 10px;
 `;
 
-const MoviesList = ({ searchQuery }) => {
-  const [movies, setMovies] = useState([]);
+const MoviesList = ({ movies }) => {
+  // const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    if (searchQuery) {
-      searchMovies(searchQuery).then((data) => {
-        setMovies(data.results);
-      });
-    }
-  }, [searchQuery]);
+  // useEffect(() => {
+  //   if (searchQuery) {
+  //     searchMovies(searchQuery).then((data) => {
+  //       setMovies(data.results);
+  //     });
+  //   }
+  // }, [movies]);
 
   return (
     <StyledUl>

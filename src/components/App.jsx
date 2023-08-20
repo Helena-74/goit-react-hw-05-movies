@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Link, Router, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -25,20 +25,22 @@ const AppContainer = styled.div`
 
 const App = () => {
   return (
-    <Router>
+    <Routes>
       <GlobalStyle />
       <AppContainer>
         <Suspense fallback={<div>Loading...</div>} >
-          <Route index element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />}>
-            <Route path="Reviews" element={<Reviews />} />
-            <Route path="cast" element={<Cast />} />
+          <Route>
+            <Route index element={<Home />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/movies/:movieId" element={<MovieDetails />}>
+              <Route path="Reviews" element={<Reviews />} />
+              <Route path="cast" element={<Cast />} />
+            </Route>
           </Route>
         <Route path="*" element={<Home />} />
         </Suspense>
       </AppContainer>
-    </Router>
+    </Routes>
   );
 };
 

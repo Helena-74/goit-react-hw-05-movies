@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import MoviesList from '../../components/Movies/MoviesList';
 import SearchForm from '../../components/Movies/SearchForm';
-import { searchMoviesByKeyword, getTrendingMovies } from '../../components/api'; 
+import { getTrendingMovies } from '../../components/api'; 
 
 const MoviesContainer = styled.div`
   margin: 20px;
