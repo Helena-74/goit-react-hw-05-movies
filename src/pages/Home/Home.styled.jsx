@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const StyledHeader = styled.h2`
   font-size: 24px;

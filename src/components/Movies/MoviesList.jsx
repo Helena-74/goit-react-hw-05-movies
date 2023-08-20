@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-// import { searchMovies } from '../api';
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -13,15 +12,7 @@ const StyledLi = styled.li`
 `;
 
 const MoviesList = ({ movies }) => {
-  // const [movies, setMovies] = useState([]);
 
-  // useEffect(() => {
-  //   if (searchQuery) {
-  //     searchMovies(searchQuery).then((data) => {
-  //       setMovies(data.results);
-  //     });
-  //   }
-  // }, [movies]);
 
   return (
     <StyledUl>
