@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Suspense } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 export function Layout() {
   return (
