@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const StyledUl = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const StyledLi = styled.li`
-  margin-bottom: 10px;
-`;
+import { StyledLi, StyledUl } from 'pages/Home/Home.styled';
 
 const MoviesList = ({ movies }) => {
 
